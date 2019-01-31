@@ -56,7 +56,6 @@ itemFetcher.then((items) => {
         
         if(userInput.item.stock_quantity < userInput.quantity){
           console.log("Insufficient Quantity!");
-          //getUserBid();
         }else{
           let quantity = userInput.item.stock_quantity - userInput.quantity;
           let cost = userInput.quantity * userInput.item.price;
@@ -83,4 +82,3 @@ const updateProducts = (quantity,item_id,cost) =>{
    } )
 }
 
-module.exports = {};

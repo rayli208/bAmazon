@@ -8,3 +8,6 @@ INSERT INTO products
   ('Pancakes','Food',5.99,120),
   ('Wine','Alcohol',30,45),
   ('Fish','Food',20,27);
+  ('Beer','Alcohol',15,44);
+  ('Whiskey','Alcohol',21,11);
+  ('Bat','Pet',140,3);
