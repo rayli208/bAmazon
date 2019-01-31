@@ -23,7 +23,7 @@ const start = () =>{
       for(let i=0;i< data.length;i++)
       {
         var itemData = {
-          name : data[i].product_name + ", $" + data[i].price + ", Avl: "+ data[i].stock_quantity,
+          name : data[i].product_name + ", $" + data[i].price + ", Available: "+ data[i].stock_quantity,
           value : {
             item_id:data[i].item_id,
             product_name: data[i].product_name,
@@ -52,14 +52,14 @@ itemFetcher.then((items) => {
         validate :function(input){
           return !isNaN(input);
         } 
-      }]).then(function(userInput) {
+      }]).then(function(pick) {
         
-        if(userInput.item.stock_quantity < userInput.quantity){
+        if(pick.item.stock_quantity < pick.quantity){
           console.log("Insufficient Quantity!");
         }else{
-          let quantity = userInput.item.stock_quantity - userInput.quantity;
-          let cost = userInput.quantity * userInput.item.price;
-          updateProducts(quantity, userInput.item.item_id, cost);
+          let quantity = pick.item.stock_quantity - pick.quantity;
+          let cost = pick.quantity * pick.item.price;
+          updateProducts(quantity, pick.item.item_id, cost);
         }
     });
 });
